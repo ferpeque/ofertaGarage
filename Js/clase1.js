@@ -22,3 +22,44 @@ console.log("---- Desafío: Crear un algoritmo JS simple ----")
 
 console.log("---- Desafío: crear un algoritmo con un condicional ----")
 
+
+
+if (oferta < precio1) { 
+    alert (` ${nombre} ${apellido} su oferta es muy baja, pruebe otra vez.`)
+
+        } else if (oferta === precio1) { 
+                 alert (` ${nombre} ${apellido} esta es tu oferta final ?`)
+
+                    } else {
+                        alert ( `${nombre} ${apellido} el producto es tuyo !!!. Agregalo al carrito`) 
+}
+
+if (seleccion1 === "analógicas") {
+    console.log (` ${nombre} ${apellido} es un nostálgico`)
+        } else if (seleccion1 === "manuales") {
+            console.log (` ${nombre} ${apellido} le gusta la tecnología`)
+                } else  {
+                    alert ("Escriba una opción correctamente") // se ve último. 
+
+}
+
+let pago = prompt ("ingrese su modo de pago: efectivo o tarjeta");
+
+switch (pago) {
+    case "efectivo":
+        console.log ("Eligio pagar con efectivo")
+          break;
+    case "tarjeta":
+        console.log ("eligio pagar con tarjeta")
+            break;
+    default:  // = else   
+        console.log("No sabe con que modo pagar")   
+            break;
+}
+
+
+
+
+
+ 
+ 
