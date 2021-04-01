@@ -57,7 +57,7 @@ for (precio; precio <=7; precio++) {
            
         }
         else {
-            console.error("el usuario no sabe")
+            console.error("el usuario no eligio")
 
         }
 
