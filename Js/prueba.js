@@ -1,5 +1,3 @@
-console.log ("** Simulador Interctivo **")
-
 function obtenerOferta () {
     let oferta = prompt ("ingrese su oferta")
         oferta = parseInt(oferta)
@@ -52,13 +50,8 @@ for (precio; precio <=7; precio++) {
                 break;
             }
     }
-        else if (ingresaProducto === "no") { 
-            break;
-           
-        }
-        else {
+        else { 
             console.error("el usuario no sabe")
-
         }
 
 } 
