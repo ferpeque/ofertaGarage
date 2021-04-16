@@ -34,7 +34,7 @@ function ganancia () {
 }
 
  ganancia ()
-
+// me deberia retornar el resultado de mi ganancia. 
 
 
 
