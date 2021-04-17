@@ -39,11 +39,12 @@ console.log(agregarProductos())
 // NO ME SALIO ! 
 
 class tarjetaProducto2 {
-    constructor (nombre, precio, id, categoría) {
+    constructor (nombre, precio, id, categoría, stock) {
         this.nombre = nombre
         this.precio = precio
         this.id = id
-        this.categoría = categoría
+        this.categoría = categoría  // .toLowerCase() -- no me lo toma .. xq ??
+        this.stock = stock
     }
 }
 
@@ -61,7 +62,7 @@ let crearBusqueda = (producto) => {
 
 // mis productos a la venta 
 
-const product1 = new tarjetaProducto2 ("Mini componente", 800, 1, "audio")
+const product1 = new tarjetaProducto2 ("Mini componente", 800, 1, "audio",10)
 const product2 = new tarjetaProducto2 ("Canon D 60x", 1000, 2, "fotografia") 
 const product3 = new tarjetaProducto2 ("El conde de Montecristo", 700, 3, "literatura")
 
@@ -88,7 +89,7 @@ console.log(listaProductos())
 
 function busqueda () {
     let  categoría = prompt("Ingresa una categoría que desea buscar (audio, fotografia o literatura")
-    return  categoría
+        return  categoría
 
 }
 
@@ -96,8 +97,40 @@ let categorías = busqueda()
 
 console.log(categorías)
 
+console.log(findOne(categorías))
 
-// quiero que reciba por parametro un resultado de un promnt
 
 
-console.log(findOne(categorias))
+let precio = 1 
+
+function agregarProducto () {
+
+    // en teoria ya eligio un producto y quiere agregar más del mismo item. 
+        // por ahora me agrega 5 productos porque la variable precio aumenta. 
+
+for (precio; precio < product1.stock ; precio++) {
+    let ingresaProducto = prompt ("Desea agregar más cantidad")
+    if  (ingresaProducto === "si") {
+        alert ("El precio es " + precio*2)
+            console.log(precio)
+            if (precio === 5) {
+                alert ("No hay más stock")
+                break;
+            }
+    }
+        else if (ingresaProducto === "no") { 
+            break;
+           
+        }
+        else {
+            console.error("el usuario no eligio")
+
+        }
+
+} 
+
+}
+
+agregarProducto () 
+
+console.log(product1.stock)
