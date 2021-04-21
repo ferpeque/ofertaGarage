@@ -3,7 +3,7 @@ console.log("Array&Objects")
 
 // creo una clase/objeto producto 
 
-class tarjetaProducto {
+class TarjetaProducto {
     constructor (nombre, precio, id) {
         this.nombre = nombre
         this.precio = precio
@@ -15,7 +15,7 @@ class tarjetaProducto {
 const carrito = []
 
 // va a recibir el array
-let agregarProductos = () => {
+let agregarProductoAlCarrito = () => {
     return carrito
 }
 
@@ -27,18 +27,16 @@ let crearProducto = (producto) => {
 
 }
 
-const producto1 = new tarjetaProducto("Mini componente", 800, 1)
-const producto2 = new tarjetaProducto("Canon D 60x", 1000, 1)
+const producto1 = new TarjetaProducto("Mini componente", 800, 1)
+const producto2 = new TarjetaProducto("Canon D 60x", 1000, 1)
 
 crearProducto (producto1)
 crearProducto (producto2)
-console.log(agregarProductos())
+console.log(agregarProductoAlCarrito())
 
+// ****************************** nuevo objeto ************************
 
-// de una lista de objetos, mostrar la Categoría de productos que el usuario quiera encontrar. 
-// NO ME SALIO ! 
-
-class tarjetaProducto2 {
+class TarjetaProducto2 {
     constructor (nombre, precio, id, categoría, stock) {
         this.nombre = nombre
         this.precio = precio
@@ -62,22 +60,30 @@ let crearBusqueda = (producto) => {
 
 // mis productos a la venta 
 
-const product1 = new tarjetaProducto2 ("Mini componente", 800, 1, "audio",10)
-const product2 = new tarjetaProducto2 ("Canon D 60x", 1000, 2, "fotografia") 
-const product3 = new tarjetaProducto2 ("El conde de Montecristo", 700, 3, "literatura")
+const product1 = new TarjetaProducto2 ("Mini componente", 800, 1, "audio",10)
+const product2 = new TarjetaProducto2 ("Canon D 60x", 1000, 2, "fotografia",20) 
+const product3 = new TarjetaProducto2 ("El conde de Montecristo", 700, 3, "literatura",5)
 
 
 
 const findOne = (categorías)  => {
 
-    const busquedaActiva = buscador.find ((tarjetaProducto2) => {
-       if (tarjetaProducto2.categoría ===  categorías) {
-                          return tarjetaProducto2 } 
+    const busquedaActiva = buscador.find ((TarjetaProducto2) => {
+       if (TarjetaProducto2.categoría ===  categorías) {
+                          return TarjetaProducto2 } 
     })
 
 
     return busquedaActiva 
 }
+
+/* 
+ERROR Y CORTA LA BUSQUEDA. 
+
+    if (!busquedaActiva) {
+        throw new Error ("No existe  ${categorías}")
+    }
+*/
 
 // esto agrega a la lista
 crearBusqueda (product1)
@@ -134,3 +140,43 @@ for (precio; precio < product1.stock ; precio++) {
 agregarProducto () 
 
 console.log(product1.stock)
+
+// update -- actualiza .. puedo actualizar la cant de algo  
+// o cambiar algun tipo de información. 
+// ver para qué lo puedo utilizar. 
+
+update = (categorías, stock) => {
+    const TarjetaProducto2 = findOne(categorías)
+   
+    if (TarjetaProducto2) {
+        TarjetaProducto2.stock = stock
+
+    }
+}
+
+ // update ("audio", 20)
+
+
+
+// remove que seria como eliminar el producto seleccionado
+// para elimnar necesto conocer el indice
+// no funca .. por qué ? (1:40)
+
+const remove = (nombre) => {
+    const index = listaProductos.findIndex ( TarjetaProducto2 => TarjetaProducto2.nombre === nombre )
+// si no encuentas uno me devuelve -1 -- no existe
+    if (index >= o) {
+        listaProductos.splice(index, 1)
+    }
+}
+
+remove("Mini componente")
+
+// console.log(getAll()) -- funiciona igual ? 
+console.log(listaProductos())   
+
+/*
+class / getAll / create / findOne / update / remove
+
+
+*/
