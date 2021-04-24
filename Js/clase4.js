@@ -60,14 +60,15 @@ console.log(productosDelCarrito())
 
 //recupero estructura hmtl del producto
 const tarjetaPrducto = document.getElementById("card1")
-
-let   ofertaIngresada = document.getElementById("input-oferta") 
+let ofertaIngresada = document.getElementById("input-oferta") 
+let mensajeOferta = document.getElementById("resultado") 
 
 console.log (tarjetaPrducto)
 console.log (ofertaIngresada)
 
 
 // mo me funciono en la tarjeta que tengo
+  // creo que es porque no esta adentro de un form  
 
 tarjetaPrducto.addEventListener("submit", (event) => { 
     // previene actualizacion de la pagima
@@ -89,7 +90,12 @@ AgregarProducto(product1)
 console.log( product1)
 
 //limpia lo escrito
-ofertaIngresada.value=""
+//ofertaIngresada.value=""
+
+let itemOferta = document.createElement('p')
+itemOferta.textContent = `La oferta ingresada es  ${ofertaUser} `
+
+mensajeOferta.appendChild(itemOferta)
 
 })
 
