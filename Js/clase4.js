@@ -6,7 +6,7 @@ class TarjetaProducto {
         this.id = id
         this.categoría = categoría  // .toLowerCase() -- no me lo toma .. xq ??
         this.stock = stock
-        this.oferta = oferta
+        this.oferta = oferta // deberia usar una Fn
     }
 }
 
