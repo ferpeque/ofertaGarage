@@ -30,7 +30,9 @@
                 <a class="nav-link" href="#">Productos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Carrito</a>
+                <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
+               <!-- <img  href="#" src="img/Carrito.png" class="img-carrito" alt=""> -->
+
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Contacto</a>
@@ -46,7 +48,7 @@
 
 </div>  
 
-<!--PRESENTACION / COMO FUNCIONA -->
+<!--PRESENTACION / COMO FUNCIONA -->    
     <section class="container">
 
 
@@ -64,14 +66,17 @@
 
 <!--PRODUCTO 1 -->
     <div class="container">
-        <div class="card">
+        <div class="card" >
             <img src="Img/Canon__Eos__RebelxT.jpg"
                 alt="" class="card__img">
             <h4 class="card__title">Card 1</h4>
             <p class="card__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim quaerat ut
                 debitis. Animi reprehenderit quis similique expedita! Suscipit, deleniti eos!</p>
-                <input type="text" name="Oferta1" placeholder="Ingrese su Oferta" id="Oferta1" class="imput__textera">
-            <a href="#" class="card__btn">Leer más</a>
+                <input type="text" id="input-oferta" name="Oferta1" placeholder="Ingrese su Oferta" id="Oferta1" class="imput__textera">
+            <a href="#" id="card1" class="card__btn">Leer más</a>
+            <div id="resultado">
+
+            </div>
         </div>
 
 <!--PRODUCTO 2 -->
@@ -109,9 +114,27 @@
     </div>
 
 
+<!-- MODAL -->
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carrito-contenedor">
+                <div class="productoEnCarrito">
+                    <p>Buzo 1</p>
+                    <p>Precio: $1200</p>
+                    <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+                </div>
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+        </div>
+    </div>
 
-<script src="Js/app.js"> </script>
 
+
+
+<script src="app/modal.js"> </script>
+<script src="app/app.js"> </script>
 
 
 </body>

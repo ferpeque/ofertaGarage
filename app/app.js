@@ -59,26 +59,45 @@ console.log(productosDelCarrito())
 
 
 //recupero estructura hmtl del producto
-const tarjetaPrducto = document.getElementById("card1")
+const tarjetaProducto = document.getElementById("card1")
 let ofertaIngresada = document.getElementById("input-oferta") 
 let mensajeOferta = document.getElementById("resultado") 
 
-console.log (tarjetaPrducto)
-console.log (ofertaIngresada)
+console.log (tarjetaProducto)
+// console.log (ofertaIngresada)
 
 
 // mo me funciono en la tarjeta que tengo
   // creo que es porque no esta adentro de un form  
 
-tarjetaPrducto.addEventListener("submit", (event) => { 
+tarjetaProducto.addEventListener('click', (event) => { 
+    
     // previene actualizacion de la pagima
     event.preventDefault()
     console.log ("se apreto el boton")
-   
 
-// recupero oferta del User
-let ofertaUser = parseInt(ofertaIngresada.value)
-console.log(ofertaUser)
+    // recupero oferta del User
+    let ofertaUser = parseInt(ofertaIngresada.value)
+    console.log(ofertaUser)
+    console.log(typeof ofertaUser)
+
+    // muestro resultado del User y agrego boton carrito
+    let itemOferta = document.createElement('p')
+    itemOferta.textContent = `La oferta ingresada es  ${ofertaUser} `
+    itemOferta.innerHTML = `
+    <button onclick = agregarAlCarrito () class="btn" type="submit"> Agregar carrito </button> `
+    mensajeOferta.appendChild(itemOferta)
+    
+
+
+
+})
+
+
+
+
+/*
+
 
 //creo producto con la ofertaUserS
 const product1 = new TarjetaProducto ("Mini componente", 800, 1, "audio",10, ofertaUser)
@@ -92,10 +111,8 @@ console.log( product1)
 //limpia lo escrito
 //ofertaIngresada.value=""
 
-let itemOferta = document.createElement('p')
-itemOferta.textContent = `La oferta ingresada es  ${ofertaUser} `
 
-mensajeOferta.appendChild(itemOferta)
 
 })
 
+*/
