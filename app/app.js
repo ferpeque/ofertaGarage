@@ -1,118 +1,41 @@
 
-class TarjetaProducto {
-    constructor (nombre, precio, id, categoría, stock, oferta) {
-        this.nombre = nombre
-        this.precio = precio
-        this.id = id
-        this.categoría = categoría  // .toLowerCase() -- no me lo toma .. xq ??
-        this.stock = stock
-        this.oferta = oferta // deberia usar una Fn
-    }
-}
+        //function oferta () {
+        //    console.log("ingrese su oferta")
+        //}
 
 
-// Array de productos
-const carrito =  []
+// Recupero estructura hmtl del producto
+let contenedorTarjeta = document.getElementById("container-product")
+    //console.log(contenedorTarjeta)
 
-// validacion - no me sale. 
-/*
-if (!carrito) {          
-       carrito = []
-        
-}
-*/
+// forEach recorre todo el Array
+productos.forEach(product => {
+    console.log (product)
 
-// Retorna los productos agregados
-let productosDelCarrito = () => {
-    return carrito
-}
+//Creo tarjeta producto.
+//Por cada product me crea un html 
+let div = document.createElement("div")
+div.classList.add("card")
+console.log(div)
 
-// Agregar productos - BOTON 
-let AgregarProducto = (producto) => {
-    carrito.push(producto)
+div.innerHTML = `
 
-}
+    <img src=${product.img} alt="" class="card__img">
+    <h4 class="card__title">${product.nombre}</h4>
+    <p class="card__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim quaerat ut
+    debitis. Animi reprehenderit quis similique expedita! Suscipit, deleniti eos!</p>
+    <input type="text" id="input-oferta" name="Oferta1" placeholder="Ingrese su Oferta" id="Oferta1" class="imput__textera">
+    <a href="#" id="card1" class="card__btn">Leer más</a>
+    <div id="resultado"
 
-/*
-// Mis productos son 
+`
+contenedorTarjeta.appendChild(div)
+})   
 
-        // const product1 = new TarjetaProducto ("Mini componente", 800, 1, "audio",10, 100)
-const product2 = new TarjetaProducto ("Canon D 60x", 1000, 2, "fotografia",20, 200) 
-const product3 = new TarjetaProducto ("El conde de Montecristo", 700, 3, "literatura",5, 300)
-
-// CLICK BOTON AGREGAR
-
-        //AgergarProducto(product1)
-AgergarProducto(product2)
-AgergarProducto(product3)
-
-let productosSeleccionados =  productosDelCarrito()
-
-//almacenados los productos del carritos. 
-localStorage.setItem("carrito", JSON.stringify(productosSeleccionados) ) 
-JSON.parse(localStorage.getItem("carrito"))
-
-//productos del carrito
-console.log(productosDelCarrito())
-
-*/
-
-
-//recupero estructura hmtl del producto
 const tarjetaProducto = document.getElementById("card1")
 let ofertaIngresada = document.getElementById("input-oferta") 
 let mensajeOferta = document.getElementById("resultado") 
 
-console.log (tarjetaProducto)
+//console.log (tarjetaProducto)
 // console.log (ofertaIngresada)
 
-
-// mo me funciono en la tarjeta que tengo
-  // creo que es porque no esta adentro de un form  
-
-tarjetaProducto.addEventListener('click', (event) => { 
-    
-    // previene actualizacion de la pagima
-    event.preventDefault()
-    console.log ("se apreto el boton")
-
-    // recupero oferta del User
-    let ofertaUser = parseInt(ofertaIngresada.value)
-    console.log(ofertaUser)
-    console.log(typeof ofertaUser)
-
-    // muestro resultado del User y agrego boton carrito
-    let itemOferta = document.createElement('p')
-    itemOferta.textContent = `La oferta ingresada es  ${ofertaUser} `
-    itemOferta.innerHTML = `
-    <button onclick = agregarAlCarrito () class="btn" type="submit"> Agregar carrito </button> `
-    mensajeOferta.appendChild(itemOferta)
-    
-
-
-
-})
-
-
-
-
-/*
-
-
-//creo producto con la ofertaUserS
-const product1 = new TarjetaProducto ("Mini componente", 800, 1, "audio",10, ofertaUser)
-
-// se supone que agrega al array Carrito
-AgregarProducto(product1)
-
-// muestro el producto con la ofertaUser
-console.log( product1)
-
-//limpia lo escrito
-//ofertaIngresada.value=""
-
-
-
-})
-
-*/

@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script> <!-- ICONOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">  
     <link rel="stylesheet" href="style.css">
     <title>Tienda Garage</title>
 </head>
@@ -28,10 +28,12 @@
                   </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Productos</a>
+                
               </li>
               <li class="nav-item">
                 <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
-               <!-- <img  href="#" src="img/Carrito.png" class="img-carrito" alt=""> -->
+              
+                <!-- <img  href="#" src="img/Carrito.png" class="img-carrito" alt=""> -->
 
               </li>
               <li class="nav-item">
@@ -64,57 +66,17 @@
 
     </section>
 
-<!--PRODUCTO 1 -->
-    <div class="container">
-        <div class="card" >
-            <img src="Img/Canon__Eos__RebelxT.jpg"
-                alt="" class="card__img">
-            <h4 class="card__title">Card 1</h4>
-            <p class="card__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim quaerat ut
-                debitis. Animi reprehenderit quis similique expedita! Suscipit, deleniti eos!</p>
-                <input type="text" id="input-oferta" name="Oferta1" placeholder="Ingrese su Oferta" id="Oferta1" class="imput__textera">
-            <a href="#" id="card1" class="card__btn">Leer más</a>
-            <div id="resultado">
+<!--PRODUCTO -->
 
-            </div>
-        </div>
+    <main class="container" id="container-product">
 
-<!--PRODUCTO 2 -->
-        <div class="card">
-            <img src="Img/EquipoAudio__Philips.jpg"
-                alt="" class="card__img">
-            <h4 class="card__title">Card 2</h4>
-            <p class="card__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus non quam
-                dolorum suscipit sunt eos consectetur quas quasi dolor nobis?</p>
-                <input type="text" name="Oferta2" placeholder="Ingrese su Oferta" id="Oferta2" class="imput__textera">
-            <a href="#" class="card__btn">Leer más</a>
-        </div>
-
-<!--PRODUCTO 3 -->
-        <div class="card">
-            <img src="Img/Fmd_System.jpg"
-                alt="" class="card__img">
-            <h4 class="card__title">Card 3</h4>
-            <p class="card__description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam eligendi minima
-                voluptatem reiciendis tenetur explicabo placeat quis temporibus officia aliquam.</p>
-                <input type="text" name="Oferta3" placeholder="Ingrese su Oferta" id="Oferta3" class="imput__textera">
-            <a href="#" class="card__btn">Leer más</a>
-        </div>
-
-<!--PRODUCTO 4 -->
-        <div class="card">
-            <img src="Img/FujiFilm__instax100.jpg"
-                alt="" class="card__img">
-            <h4 class="card__title">Card 4</h4>
-            <p class="card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, totam? Sed
-                expedita numquam dolore ducimus, sequi quae doloribus delectus temporibus!</p>
-                <input type="text" name="Oferta4" placeholder="Ingrese su Oferta" id="Oferta4" class="imput__textera">
-            <a href="#" class="card__btn">Leer más</a>
-        </div>
-    </div>
+    </main>
 
 
-<!-- MODAL -->
+
+
+<!-- MODAL ( Esta inactio en CSS )-->
+
     <div class="modal-contenedor">
         <div class="modal-carrito">
             <h3>Carrito</h3>
@@ -132,7 +94,7 @@
 
 
 
-
+<script src="app/productos.js"> </script>
 <script src="app/modal.js"> </script>
 <script src="app/app.js"> </script>
 
