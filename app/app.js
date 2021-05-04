@@ -1,6 +1,4 @@
 
-
-
 // Recupero estructura hmtl del producto
 let contenedorTarjeta = document.getElementById("container-product")
     //console.log(contenedorTarjeta)
@@ -20,23 +18,27 @@ div.innerHTML = `
     <img src=${product.img} alt="" class="card__img">
     <h4 class="card__title">${product.nombre}</h4>
     <p class="card__description">${product.desc}</p>
-    <input type="text" id="input-oferta" name="Oferta1" placeholder="Ingrese su Oferta" class="imput__textera">
-    <a href="#" id="card1" onclick=ofertaUser(event) class="card__btn">Ofertar</a>
+    <input type="text" id="input-oferta" name=${product.oferta} placeholder="Ingrese su Oferta" class="imput__textera">
+    <a href="#" id="card1" onclick=ofertaUser(event)  class="card__btn">Ofertar</a>
     <div id="resultado"
     <a href="#" id="AgregarCarrito" onclick=agregarCarrito(${product.id}) class="card__btn">AgregarCarrito</a>
 `
 contenedorTarjeta.appendChild(div)
 
+
 })   
 
 
-
+// *** ME FALTA RESOLVER ESTO *** !!! 
 
 function ofertaUser (event) {
         // console.log (event.target)
 
 // previene actualizacion de la pagima
     event.preventDefault()
+
+
+
    
     let ofertaIngresada = document.getElementById("input-oferta") 
     console.log(ofertaIngresada)
@@ -59,10 +61,11 @@ function ofertaUser (event) {
 */    
 }
 
-//
+
 
 
 //BOTON
+
 function agregarCarrito (id) {
     //recuperar el elemento elegito al clickear
     const productoElegido = productos.find( el => el.id == id) 
@@ -75,14 +78,30 @@ function agregarCarrito (id) {
 
      productosSeleccionados ()
 
-     console.log(carrito)   
-    
+     //console.log(carrito)   
 }
+
+function eliminarPorducto (id) {
+    const productoEliminar = carrito.find (el =>el.id==id)
+
+        // me devuelve el indicte (posicion) del producto en el ArrayCarrito (modal)
+    const indice = carrito.indexOf(productoEliminar)
+        
+        // metodo splice elimina un producto
+    carrito.splice(indice, 1 )
+    console.log(carrito)
+
+        // actualizdo contenido del Modal 
+    productosSeleccionados () 
+
+}
+
 
 //AGREGRAR PRODUCTOS SELECCIONADOS A MODAL
 
 function productosSeleccionados () {
     const contenedorCarrito = document.getElementById("carrito-contenedor")
+    const contador = document.getElementById("contadorCarrito")
     
     // vaciar el carrito 
     contenedorCarrito.innerHTML=""
@@ -92,9 +111,11 @@ function productosSeleccionados () {
         <div class="productoEnCarrito">
         <p>${product.nombre}</p>
         <p>Precio: $1200</p>
-        <button class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
+        <button onclick=eliminarPorducto(${product.id}) class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
     </div>`
     })
+
+    contador.innerText = carrito.length
 
 }
 
