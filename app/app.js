@@ -25,13 +25,13 @@ div.innerHTML = `
 `
 contenedorTarjeta.appendChild(div)
 
-
 })   
+
+// OFERTA 
 
 const ofertaIngresada = $('.input-oferta')
 const ofertaButton = $('#card1')
 const botonAgregarCarrito = $('#AgregarCarrito')
-
 
 ofertaButton.on ('click', function (event){
     event.preventDefault()
@@ -53,9 +53,7 @@ ofertaButton.on ('click', function (event){
 } )
 
 
-/*
-s
-// *** ME FALTA RESOLVER ESTO *** !!! 
+
 
 function ofertaUser (event) {
         // console.log (event.target)
@@ -80,7 +78,6 @@ function ofertaUser (event) {
 
 }
 
-*/
 
 
 //BOTON
