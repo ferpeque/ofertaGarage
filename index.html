@@ -2,97 +2,100 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script> <!-- ICONOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">  
-    <link rel="stylesheet" href="style.css">
-    <title>Tienda Garage</title>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script> <!-- ICONOS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Tienda Garage</title>
 </head>
 
 <body>
 
-<!--HEAD -->
-<div class="container"> 
+  <!--HEAD -->
+  <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a class="navbar-brand" href="#">OfertaGarage</a>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cómo Ofertar</a>
-                  </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Productos</a>
-                
-              </li>
-              <li class="nav-item">
-                <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
-              
-                <!-- <img  href="#" src="img/Carrito.png" class="img-carrito" alt=""> -->
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">OfertaGarage</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Cómo Ofertar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Productos</a>
 
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacto</a>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+            </li>
+            <li class="nav-item">
+              <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span
+                  id="contadorCarrito">0</span></button>
+
+              <!-- <img  href="#" src="img/Carrito.png" class="img-carrito" alt=""> -->
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
         </div>
-      </nav>
+      </div>
+    </nav>
 
-</div>  
+  </div>
 
-<!--PRESENTACION / COMO FUNCIONA -->    
-    <section class="container">
-
-
-        <h1> OFERTA GARAGE </h1>
-
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum totam tenetur alias quas voluptates,
-            ratione aliquid quasi esse et dignissimos, reiciendis porro suscipit veniam corporis quibusdam temporibus
-             iste, iusto repudiandae!
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum totam tenetur alias quas voluptates,
-             ratione aliquid quasi esse et dignissimos, reiciendis porro suscipit veniam corporis quibusdam temporibus
-              iste, iusto repudiandae!</p>
+  <!--PRESENTACION / COMO FUNCIONA -->
+  <section class="container">
 
 
-    </section>
+    <h1> OFERTA GARAGE </h1>
 
-<!--PRODUCTO -->
+    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum totam tenetur alias quas voluptates,
+      ratione aliquid quasi esse et dignissimos, reiciendis porro suscipit veniam corporis quibusdam temporibus
+      iste, iusto repudiandae!
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum totam tenetur alias quas voluptates,
+      ratione aliquid quasi esse et dignissimos, reiciendis porro suscipit veniam corporis quibusdam temporibus
+      iste, iusto repudiandae!</p>
 
-    <main class="container" id="container-product">
 
-    </main>
+  </section>
+
+  <!--PRODUCTO -->
+
+  <main class="container" id="container-product">
+
+  </main>
 
 
 
 
-<!-- MODAL ( Esta inactivo en CSS )-->
+  <!-- MODAL ( Esta inactivo en CSS )-->
 
-    <div class="modal-contenedor">
-        <div class="modal-carrito">
-            <h3>Carrito</h3>
-            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
-            <div id="carrito-contenedor">
-                
-            </div>
-            <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
-        </div>
+  <div class="modal-contenedor">
+    <div class="modal-carrito">
+      <h3>Carrito</h3>
+      <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+      <div id="carrito-contenedor">
+
+      </div>
+      <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
     </div>
+  </div>
 
 
-
-<script src="app/productos.js"> </script>
-<script src="app/modal.js"> </script>
-<script src="app/app.js"> </script>
+  
+  <script src="app/productos.js"> </script>
+  <script src="app/modal.js"> </script>
+  <script src="app/app.js"> </script>
 
 
 </body>

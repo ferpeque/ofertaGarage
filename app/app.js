@@ -19,8 +19,8 @@ div.innerHTML = `
     <h4 class="card__title">${product.nombre}</h4>
     <p class="card__description">${product.desc}</p>
     <input type="text" id="input-oferta" name=${product.oferta} placeholder="Ingrese su Oferta" class="imput__textera">
-    <a href="#" id="card1" onclick=ofertaUser(event)  class="card__btn">Ofertar</a>
-    <div id="resultado"
+    <a href="#" id="card1" class="card__btn" >Ofertar</a>
+    <div id="resultado"</div>
     <a href="#" id="AgregarCarrito" onclick=agregarCarrito(${product.id}) class="card__btn">AgregarCarrito</a>
 `
 contenedorTarjeta.appendChild(div)
@@ -28,7 +28,33 @@ contenedorTarjeta.appendChild(div)
 
 })   
 
+const ofertaIngresada = $('.input-oferta')
+const ofertaButton = $('#card1')
+const botonAgregarCarrito = $('#AgregarCarrito')
 
+
+ofertaButton.on ('click', function (event){
+    event.preventDefault()
+    console.log("click")
+    const ofertaUser = ofertaIngresada.val()
+    console.log ( ofertaIngresada )
+    console.log ( ofertaUser )
+
+    let mensajeOferta = document.getElementById("resultado") 
+    // muestro resultado del User y agrego boton carrito
+       let itemOferta = document.createElement('p')
+       itemOferta.textContent = `La oferta ingresada es $ {ofertaUser} `
+    //  itemOferta.innerHTML = `
+    //  <a href="#" id="AgregarCarrito"  class="card__btn">AgregarCarrito</a> `
+       mensajeOferta.appendChild(itemOferta) 
+
+   botonAgregarCarrito.classList.add('AgregarCarrito-active')
+
+} )
+
+
+/*
+s
 // *** ME FALTA RESOLVER ESTO *** !!! 
 
 function ofertaUser (event) {
@@ -47,21 +73,14 @@ function ofertaUser (event) {
     console.log(ofertaUser) 
     console.log(typeof ofertaUser)
     
-/*
 
 
-    let mensajeOferta = document.getElementById("resultado") 
-     // muestro resultado del User y agrego boton carrito
-        let itemOferta = document.createElement('p')
-        itemOferta.textContent = `La oferta ingresada es  ${ofertaUser} `
-        itemOferta.innerHTML = `
-        <button onclick=agregarAlCarrito() class="btn" type="submit"> Agregar carrito </button> `
-        mensajeOferta.appendChild(itemOferta) 
 
-*/    
+
+
 }
 
-
+*/
 
 
 //BOTON
