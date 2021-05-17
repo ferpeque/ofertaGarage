@@ -1,3 +1,5 @@
+// AGREGA EN CSS BTN AGREGAR UN CURSOR:POINTER
+
 
 // Recupero estructura hmtl del producto
 let contenedorTarjeta = document.getElementById("container-product")
@@ -29,7 +31,7 @@ contenedorTarjeta.appendChild(div)
 
 // OFERTA 
 
-const ofertaIngresada = $('.input-oferta')
+const ofertaIngresada = $('#input-oferta')
 const ofertaButton = $('#card1')
 const botonAgregarCarrito = $('#AgregarCarrito')
 
@@ -40,21 +42,24 @@ ofertaButton.on ('click', function (event){
     console.log ( ofertaIngresada )
     console.log ( ofertaUser )
 
-    let mensajeOferta = document.getElementById("resultado") 
-    // muestro resultado del User y agrego boton carrito
-       let itemOferta = document.createElement('p')
-       itemOferta.textContent = `La oferta ingresada es $ {ofertaUser} `
-    //  itemOferta.innerHTML = `
-    //  <a href="#" id="AgregarCarrito"  class="card__btn">AgregarCarrito</a> `
-       mensajeOferta.appendChild(itemOferta) 
+        if (ofertaUser.length >= 1) { 
 
-   botonAgregarCarrito.classList.add('AgregarCarrito-active')
+            let mensajeOferta = $('#resultado') 
+                 mensajeOferta.append ( `
+                <p> 
+                La oferta ingresada es oferta User es ${ofertaUser}
+                <a href="#" id="AgregarCarrito"  class="card__btn">AgregarCarrito</a>  // cómo agregar este 
+                </p> `
+        )
+   //         botonAgregarCarrito.classList.add('AgregarCarrito-active')
 
+            ofertaIngresada.val('') // para que refresque
+    }
 } )
 
 
 
-
+/*
 function ofertaUser (event) {
         // console.log (event.target)
 
@@ -78,7 +83,7 @@ function ofertaUser (event) {
 
 }
 
-
+*/
 
 //BOTON
 
