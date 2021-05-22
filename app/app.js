@@ -1,46 +1,35 @@
 // AGREGA EN CSS BTN AGREGAR UN CURSOR:POINTER
 
-
-// Recupero estructura hmtl del producto
 let contenedorTarjeta = document.getElementById("container-product")
-    //console.log(contenedorTarjeta)
-
-// forEach recorre todo el Array
+    
+    // forEach recorre todo el Array
 productos.forEach(product => {
-        //console.log (product)
 
-//Creo tarjeta producto.
-//Por cada product me crea un html 
+    //Creo tarjeta producto.
 let div = document.createElement("div")
-div.classList.add("card")
-        //console.log(div)
+    div.classList.add("card")
 
-div.innerHTML = `
-
-    <img src=${product.img} alt="" class="card__img">
-    <h4 class="card__title">${product.nombre}</h4>
-    <p class="card__description">${product.desc}</p>
-    <input type="text" id="input-oferta" name=${product.oferta} placeholder="Ingrese su Oferta" class="imput__textera">
-    <a href="#" id="card1" class="card__btn">Ofertar</a>
-    <div id="resultado"</div>
-    <a href="#" id="AgregarCarrito" onclick=agregarCarrito(${product.id}) class="card__btn">AgregarCarrito</a>
-`
+div.innerHTML =
+     `
+        <img src=${product.img} alt="" class="card__img">
+        <h4 class="card__title">${product.nombre}</h4>
+        <p class="card__description">${product.desc}</p>
+        <form class="form-ofert">
+             <input type="number" id="input-oferta-${product.nombre}" name=${product.oferta} placeholder="Ingrese su Oferta" class="imput__textera" required>
+             <input type="hidden" name="oferta-id" value="${product.nombre}">
+             <input type="hidden" name="precio" value="${product.precio}">
+             <input type="submit" class="card__btn2 oferta_btn" value="Ofertar">
+        </form>
+        <div id="resultado-${product.nombre}"</div>
+        <a href="#"  id="AgregarCarrito-${product.nombre}" onclick=agregarCarrito(${product.id}) class="card__btn">AgregarCarrito</a>
+    `
 contenedorTarjeta.appendChild(div)
 
 })   
 
 // OFERTA 
 
-const ofertaIngresada = $('#input-oferta')
-
- 
-const ofertaButton = $('#card1')
-const botonAgregarCarrito = $('#AgregarCarrito')
-
-let mensajeOferta = $('#resultado') 
-
-
-// no esta funcionando.
+const ofertaButton = $('.form-ofert');
 
 /* ofertaIngresada.on('change', ()=>{
 
@@ -57,63 +46,31 @@ let mensajeOferta = $('#resultado')
 })
 */
 
-ofertaButton.on ('click', function (event){
-
+ofertaButton.on ('submit', function (event){
     event.preventDefault()
-    console.log("click")
-
-        const ofertaUser = parseInt(ofertaIngresada.val()) 
-            console.log ( ofertaIngresada )
-            console.log (typeof ofertaUser ) // el typeof me sale undefinide 
-
-
-  if (ofertaUser > 40) {              // reemplazar por precio producto
-
-            
-                mensajeOferta.append ( `
-                <p> 
-                La oferta ingresada es oferta User es ${ofertaUser}
-                <a href="#" id="AgregarCarrito"  class="card__btn">AgregarCarrito</a> 
-                </p> `
-        )
-   //         botonAgregarCarrito.classList.add('AgregarCarrito-active')
-
-            ofertaIngresada.val('') // para que refresque
-
- } else {
-        alert ("tu oferta no fue aceptada")
-            ofertaIngresada.val('') // para que refresque
-
-  }
-} )
+    const oferta = event.target[0].value;
+    console.log(oferta)
+    const precio = event.target[2].value;
+    console.log(precio)
+    const id = event.target[1].value;
 
 
-
-/*
-function ofertaUser (event) {
-        // console.log (event.target)
-
-// previene actualizacion de la pagima
-    event.preventDefault()
-
-
-
-   
-    let ofertaIngresada = document.getElementById("input-oferta") 
-    console.log(ofertaIngresada)
-    
-    let ofertaUser = parseInt(ofertaIngresada.value)
-    console.log(ofertaUser) 
-    console.log(typeof ofertaUser)
-    
-
-
-
-
-
+    if (oferta >= (precio+200)) {
+        console.log("oferta correcta")
+            let mensajeOferta = $(`#resultado-${id}`);
+                mensajeOferta.prepend(`
+        <p> 
+            La oferta ingresada es oferta User es ${oferta}
+            <a href="#" id="AgregarCarrito"  class="card__btn">AgregarCarrito</a>
+        </p>
+    `);
 }
+ else {
+        console.log("dale, oferta")
+     }
 
-*/
+})
+
 
 //BOTON
 
