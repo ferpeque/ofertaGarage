@@ -63,10 +63,19 @@ ofertaButton.on ('submit', function (event){
             La oferta ingresada es oferta User es ${oferta}
             <a href="#" id="AgregarCarrito"  class="card__btn">AgregarCarrito</a>
         </p>
-    `);
+    `)
+    $('p').slideDown(2000); // creo que no me está funcionando ! 
+    $('.card__btn').show();
+   
 }
  else {
-        console.log("dale, oferta")
+
+    let mensajeRechazado = $(`#resultado-${id}`);
+    mensajeRechazado .prepend(`
+    <p> 
+        Oferta más ! 
+    </p>
+`)
      }
 
 })
