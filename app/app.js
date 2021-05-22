@@ -9,53 +9,48 @@ let contenedorTarjeta = document.getElementById("container-product")
 productos.forEach(product => {
         //console.log (product)
 
-//Creo tarjeta producto.
-//Por cada product me crea un html 
-let div = document.createElement("div")
-div.classList.add("card")
-        //console.log(div)
+    //Creo tarjeta producto.
+    //Por cada product me crea un html
+    let div = document.createElement("div")
+    div.classList.add("card")
+            //console.log(div)
 
-div.innerHTML = `
-
-    <img src=${product.img} alt="" class="card__img">
-    <h4 class="card__title">${product.nombre}</h4>
-    <p class="card__description">${product.desc}</p>
-    <input type="text" id="input-oferta" name=${product.oferta} placeholder="Ingrese su Oferta" class="imput__textera">
-    <a href="#" id="card1" class="card__btn" >Ofertar</a>
-    <div id="resultado"</div>
-    <a href="#" id="AgregarCarrito" onclick=agregarCarrito(${product.id}) class="card__btn">AgregarCarrito</a>
-`
-contenedorTarjeta.appendChild(div)
+    div.innerHTML = `
+        <img src=${product.img} alt="" class="card__img">
+        <h4 class="card__title">${product.nombre}</h4>
+        <p class="card__description">${product.desc}</p>
+        <form class="form-ofert">
+             <input type="number" id="input-oferta-${product.nombre}" name=${product.oferta} placeholder="Ingrese su Oferta" class="imput__textera" required>
+             <input type="hidden" name="oferta-id" value="${product.nombre}">
+             <input type="submit" class="card__btn oferta_btn" value="Ofertar">
+        </form>
+        <div id="resultado-${product.nombre}"</div>
+        <a href="#" id="AgregarCarrito-${product.nombre}" onclick=agregarCarrito(${product.id}) class="card__btn">AgregarCarrito</a>
+    `
+    contenedorTarjeta.appendChild(div)
 
 })   
 
 // OFERTA 
 
-const ofertaIngresada = $('#input-oferta')
-const ofertaButton = $('#card1')
-const botonAgregarCarrito = $('#AgregarCarrito')
+const ofertaButton = $('.form-ofert');
 
-ofertaButton.on ('click', function (event){
+ofertaButton.on('submit', function (event){
     event.preventDefault()
-    console.log("click")
-    const ofertaUser = ofertaIngresada.val()
-    console.log ( ofertaIngresada )
-    console.log ( ofertaUser )
+    const oferta = event.target[0].value;
+    const id = event.target[1].value;
+    if (id.length >= 1) {
 
-        if (ofertaUser.length >= 1) { 
+        let mensajeOferta = $(`#resultado-${id}`);
 
-            let mensajeOferta = $('#resultado') 
-                 mensajeOferta.append ( `
-                <p> 
-                La oferta ingresada es oferta User es ${ofertaUser}
-                <a href="#" id="AgregarCarrito"  class="card__btn">AgregarCarrito</a>  // cómo agregar este 
-                </p> `
-        )
-   //         botonAgregarCarrito.classList.add('AgregarCarrito-active')
-
-            ofertaIngresada.val('') // para que refresque
+        mensajeOferta.append(`
+            <p> 
+                La oferta ingresada es oferta User es ${oferta}
+                <a href="#" id="AgregarCarrito"  class="card__btn">AgregarCarrito</a>
+            </p>
+        `);
     }
-} )
+});
 
 
 
