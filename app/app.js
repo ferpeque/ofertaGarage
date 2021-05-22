@@ -21,7 +21,7 @@ div.innerHTML = `
     <h4 class="card__title">${product.nombre}</h4>
     <p class="card__description">${product.desc}</p>
     <input type="text" id="input-oferta" name=${product.oferta} placeholder="Ingrese su Oferta" class="imput__textera">
-    <a href="#" id="card1" class="card__btn" >Ofertar</a>
+    <a href="#" id="card1" class="card__btn">Ofertar</a>
     <div id="resultado"</div>
     <a href="#" id="AgregarCarrito" onclick=agregarCarrito(${product.id}) class="card__btn">AgregarCarrito</a>
 `
@@ -32,29 +32,59 @@ contenedorTarjeta.appendChild(div)
 // OFERTA 
 
 const ofertaIngresada = $('#input-oferta')
+
+ 
 const ofertaButton = $('#card1')
 const botonAgregarCarrito = $('#AgregarCarrito')
 
+let mensajeOferta = $('#resultado') 
+
+
+// no esta funcionando.
+
+/* ofertaIngresada.on('change', ()=>{
+
+    const ofertaUser = parseInt(ofertaIngresada.val()) 
+
+    if (ofertaUser > 40) {
+        ofertaUser.addClass('valido')
+        ofertaUser.removeClass('imvalido')
+    } else {
+        ofertaUser.addClass('imvalido')
+        ofertaUser.removeClass('valido')
+    }
+
+})
+*/
+
 ofertaButton.on ('click', function (event){
+
     event.preventDefault()
     console.log("click")
-    const ofertaUser = ofertaIngresada.val()
-    console.log ( ofertaIngresada )
-    console.log ( ofertaUser )
 
-        if (ofertaUser.length >= 1) { 
+        const ofertaUser = parseInt(ofertaIngresada.val()) 
+            console.log ( ofertaIngresada )
+            console.log (typeof ofertaUser ) // el typeof me sale undefinide 
 
-            let mensajeOferta = $('#resultado') 
-                 mensajeOferta.append ( `
+
+  if (ofertaUser > 40) {              // reemplazar por precio producto
+
+            
+                mensajeOferta.append ( `
                 <p> 
                 La oferta ingresada es oferta User es ${ofertaUser}
-                <a href="#" id="AgregarCarrito"  class="card__btn">AgregarCarrito</a>  // cómo agregar este 
+                <a href="#" id="AgregarCarrito"  class="card__btn">AgregarCarrito</a> 
                 </p> `
         )
    //         botonAgregarCarrito.classList.add('AgregarCarrito-active')
 
             ofertaIngresada.val('') // para que refresque
-    }
+
+ } else {
+        alert ("tu oferta no fue aceptada")
+            ofertaIngresada.val('') // para que refresque
+
+  }
 } )
 
 

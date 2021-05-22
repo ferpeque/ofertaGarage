@@ -184,3 +184,11 @@
 .boton-eliminar:focus {
   outline: none;
 }
+
+.valido {
+  border: 3px solid greenyellow;
+}
+
+.invalido {
+  border: 3px solid red;
+}
