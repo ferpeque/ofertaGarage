@@ -1,11 +1,14 @@
+console.log("funciona2")
+
+
 
 const url = 'app/productos.json'
 
 
-$.get(`${url}`), function (response, status) {
+$.get((`${url}`), function (response, status) {
     console.log(response)
     console.log(status)
-}
+})
 
 
 

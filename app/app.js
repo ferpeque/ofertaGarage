@@ -1,9 +1,22 @@
 // AGREGA EN CSS BTN AGREGAR UN CURSOR:POINTER
+console.log("funciona")
+
+
+
 
 let contenedorTarjeta = document.getElementById("container-product")
+
+
+const url = 'app/productos.json'
+
+
+$.get((`${url}`), function (products) {
+    console.log(products)
     
+
+
     // forEach recorre todo el Array
-productos.forEach(product => {
+products.forEach(product => {
 
     //Creo tarjeta producto.
 let div = document.createElement("div")
@@ -26,6 +39,7 @@ div.innerHTML =
 contenedorTarjeta.appendChild(div)
 
 })   
+})
 
 // OFERTA 
 
