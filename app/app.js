@@ -1,22 +1,18 @@
-// AGREGA EN CSS BTN AGREGAR UN CURSOR:POINTER
-console.log("funciona")
 
-
-
-
+let stockProductos = []
 let contenedorTarjeta = document.getElementById("container-product")
 
+fetch('app/productos.json')
+    .then(resp => resp.json())
+        .then(data => {
+            stockProductos = data 
+            mostrarProdcutos (stockProductos)
+            console.log(stockProductos)
+        })
 
-const url = 'app/productos.json'
-
-
-$.get((`${url}`), function (products) {
-    console.log(products)
-    
-
-
+function mostrarProdcutos (array) { 
     // forEach recorre todo el Array
-products.forEach(product => {
+array.forEach(product => {
 
     //Creo tarjeta producto.
 let div = document.createElement("div")
@@ -39,7 +35,7 @@ div.innerHTML =
 contenedorTarjeta.appendChild(div)
 
 })   
-})
+
 
 // OFERTA 
 
@@ -93,11 +89,12 @@ ofertaButton.on ('submit', function (event){
      }
 
 })
+}
 
-
-//BOTON
+carrito = []
 
 function agregarCarrito (id) {
+    
     //recuperar el elemento elegito al clickear
     const productoElegido = productos.find( el => el.id == id) 
      //console.log(productoElegido)
@@ -127,9 +124,6 @@ function eliminarPorducto (id) {
 
 }
 
-
-//AGREGRAR PRODUCTOS SELECCIONADOS A MODAL
-
 function productosSeleccionados () {
     const contenedorCarrito = document.getElementById("carrito-contenedor")
     const contador = document.getElementById("contadorCarrito")
@@ -152,4 +146,3 @@ function productosSeleccionados () {
 
 
 
-carrito = []
