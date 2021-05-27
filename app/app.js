@@ -91,7 +91,16 @@ ofertaButton.on ('submit', function (event){
 })
 }
 
-carrito = []
+let carrito = []
+
+
+let carritoStorage = JSON.parse(localStorage.getItem('carrito'))
+
+if (carritoStorage) {
+    carrito = carritoStorage
+    productosSeleccionados ()
+
+}
 
 function agregarCarrito (id) {
     
@@ -104,6 +113,7 @@ function agregarCarrito (id) {
         carrito.push(productoElegido)
      }
 
+    localStorage.setItem('carrito', JSON.stringify(carrito))
      productosSeleccionados ()
 
      //console.log(carrito)   
@@ -118,6 +128,8 @@ function eliminarPorducto (id) {
         // metodo splice elimina un producto
     carrito.splice(indice, 1 )
     console.log(carrito)
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
 
         // actualizdo contenido del Modal 
     productosSeleccionados () 
