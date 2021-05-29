@@ -142,6 +142,7 @@ function eliminarPorducto (id) {
 function productosSeleccionados () {
     const contenedorCarrito = document.getElementById("carrito-contenedor")
     const contador = document.getElementById("contadorCarrito")
+   
     
     // vaciar el carrito 
     contenedorCarrito.innerHTML=""
@@ -150,13 +151,13 @@ function productosSeleccionados () {
         contenedorCarrito.innerHTML += `
         <div class="productoEnCarrito">
         <p>${product.nombre}</p>
-        <p>Precio: $1200</p>
+        <p>Precio: $ ${product.precio}</p>
         <button onclick=eliminarPorducto(${product.id}) class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>
     </div>`
     })
 
     contador.innerText = carrito.length
-
+    
 }
 
 
