@@ -64,10 +64,11 @@ ofertaButton.on ('submit', function (event){
     console.log(precio)
     const id = event.target[1].value;
 
-
+   
     if (oferta >= (precio+200)) {
         console.log("oferta correcta")
             let mensajeOferta = $(`#resultado-${id}`);
+            
                 mensajeOferta.prepend(`
         <p> 
             La oferta ingresada es oferta User es ${oferta}
@@ -87,8 +88,10 @@ ofertaButton.on ('submit', function (event){
     </p>
 `)
      }
-
+    
 })
+
+   
 }
 
 let carrito = []

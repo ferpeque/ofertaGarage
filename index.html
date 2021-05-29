@@ -30,22 +30,18 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Productos</a>
-
             </li>
             <li class="nav-item">
               <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span
                   id="contadorCarrito">0</span></button>
-
-              <!-- <img  href="#" src="img/Carrito.png" class="img-carrito" alt=""> -->
-
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contacto</a>
             </li>
           </ul>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="buscador">
+            <button class="btn btn-outline-success" id="boton-Busqueda" type="submit">Search</button>
           </form>
         </div>
       </div>
@@ -75,10 +71,13 @@
 
   </main>
 
+  <!--BUSQUEDA  -->
+
+  <main class="container" id="products-container">
+
+  </main>
 
 
-
-  <!-- MODAL ( Esta inactivo en CSS )-->
 
   <div class="modal-contenedor">
     <div class="modal-carrito">
@@ -91,12 +90,9 @@
     </div>
   </div>
   
-<!-- 
-  <script src="app/app2.js"> </script>
- -->
+
+  <script src="app/search.js"> </script>
   <script src="app/productos.js"> </script>
-
-
   <script src="app/modal.js"> </script>
   <script src="app/app.js"> </script>
   <script src="app/productos.json"> </script>  
