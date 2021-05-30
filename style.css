@@ -219,4 +219,67 @@
 
 }
 
+footer {
+background-color: rgb(130, 156, 233);
+};
+padding: 10px;	
+padding-top: 20px;
+ height: 18vh;
+} 
+
+    .titulo_encabezado {
+    color: #3d405b;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-style: italic; 
+    }
+
+    .logo_1{
+    width: 5vh;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    }
+
+      .logo_1:hover {
+      background: royalblue;
+      cursor: pointer;
+    }
+
+
+.datos {
+
+color: #3d405b;
+font-size: 0.75em;
+line-height: 1.5em;
+margin: 10px;
+}
+
+#ver__titulo {
+
+text-decoration-style: solid;
+text-decoration-line: underline;
+font-size: 1em;
+}
+
+
+
+@media (max-width: 576px) {
+       #ver__titulo 
+           { font-size: 0.8em;
+             margin-right:20px; }
+ }
+
+@media (max-width: 576px) {
+       .logo_1
+           { width: 4vh;
+         height: 4vh; }
+ }	
+
+@media (max-width: 576px) {
+       footer
+           {padding-top: 10px;}
+ }	
+
 

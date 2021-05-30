@@ -1,5 +1,5 @@
 
-document.getElementById("buscador").addEventListener("input", e => {
+/*document.getElementById("buscador").addEventListener("input", e => {
    const busqueda =  e.target.value.replace(" ", "%20");
    $.get({
        url: `https://api.mercadolibre.com/sites/MLA/search?q=${busqueda}`,
@@ -32,4 +32,4 @@ function mostrarBusqueda (busqueda) {
     }
 }
 
-
+*/
