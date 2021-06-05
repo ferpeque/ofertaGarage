@@ -3,7 +3,7 @@
 let productos = [
 
     {id:        1, 
-    nombre:     "Card1", 
+    nombre:     "CanonRebelxT", 
     img:        "Img/Canon__Eos__RebelxT.jpg", 
     desc:       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim quaerat utdebitis. Animi reprehenderit quis similique expedita! Suscipit, deleniti eos!",
     oferta:     "Oferta1",
@@ -11,7 +11,7 @@ let productos = [
 },    
 
     {id:        2, 
-    nombre:     "Card2", 
+    nombre:     "PhilipsD300Fd", 
     img:        "Img/EquipoAudio__Philips.jpg",
     desc:       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim quaerat utdebitis. Animi reprehenderit quis similique expedita! Suscipit, deleniti eos!",
     oferta:     "Oferta2",
@@ -19,7 +19,7 @@ let productos = [
 },   
 
     {id:        3, 
-    nombre:     "Card3", 
+    nombre:     "Fmd System", 
     img:        "Img/Fmd_System.jpg",
     desc:       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim quaerat utdebitis. Animi reprehenderit quis similique expedita! Suscipit, deleniti eos!",
     oferta:     "Oferta3",
@@ -27,7 +27,7 @@ let productos = [
     },  
 
     {id:        4, 
-    nombre:     "Card4",
+    nombre:     "FujiFilminstax100",
     img:        "Img/FujiFilm__instax100.jpg",
     desc:       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim quaerat utdebitis. Animi reprehenderit quis similique expedita! Suscipit, deleniti eos!",
     oferta:     "Oferta4",

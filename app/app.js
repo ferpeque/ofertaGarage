@@ -11,10 +11,9 @@ fetch('app/productos.json')
         })
 
 function mostrarProdcutos (array) { 
-    // forEach recorre todo el Array
+
 array.forEach(product => {
 
-    //Creo tarjeta producto.
 let div = document.createElement("div")
     div.classList.add("card")
 
@@ -35,26 +34,9 @@ div.innerHTML =
 contenedorTarjeta.appendChild(div)
 
 })   
-
-
-// OFERTA 
+    
 
 const ofertaButton = $('.form-ofert');
-
-/* ofertaIngresada.on('change', ()=>{
-
-    const ofertaUser = parseInt(ofertaIngresada.val()) 
-
-    if (ofertaUser > 40) {
-        ofertaUser.addClass('valido')
-        ofertaUser.removeClass('imvalido')
-    } else {
-        ofertaUser.addClass('imvalido')
-        ofertaUser.removeClass('valido')
-    }
-
-})
-*/
 
 ofertaButton.on ('submit', function (event){
     event.preventDefault()
@@ -63,14 +45,14 @@ ofertaButton.on ('submit', function (event){
     const precio = event.target[2].value;
     console.log(precio)
     const id = event.target[1].value;
-
    
-    if (oferta >= (precio+200)) {
+    if (oferta >= precio) {
         console.log("oferta correcta")
+       
             let mensajeOferta = $(`#resultado-${id}`);
             
                 mensajeOferta.prepend(`
-        <p> 
+        <p class="oferta"> 
             La oferta ingresada es oferta User es ${oferta}
             <a href="#" id="AgregarCarrito"  class="card__btn">AgregarCarrito</a>
         </p>
@@ -107,34 +89,44 @@ if (carritoStorage) {
 
 function agregarCarrito (id) {
     
-    //recuperar el elemento elegito al clickear
     const productoElegido = productos.find( el => el.id == id) 
-     //console.log(productoElegido)
 
-    // si elegiste, sumar al array del carrito. 
      if (productoElegido) {
         carrito.push(productoElegido)
      }
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
      productosSeleccionados ()
-
-     //console.log(carrito)   
+ 
 }
+
+const search = document.getElementById("boton-Busqueda")
+
+    search.addEventListener("click", ( event ) => {
+        event.preventDefault() 
+        console.log("click")
+        const busqueda = $('#buscador').val()
+        console.log(busqueda)
+        const product = productos.filter( el => el.nombre == busqueda) 
+            if (!product ) {
+                throw new Error(`No existe ${nombre}`)
+    }
+       mostrarProdcutos (product)
+       console.log(product)
+       
+
+    })
+
 
 function eliminarPorducto (id) {
     const productoEliminar = carrito.find (el =>el.id==id)
-
-        // me devuelve el indicte (posicion) del producto en el ArrayCarrito (modal)
     const indice = carrito.indexOf(productoEliminar)
         
-        // metodo splice elimina un producto
     carrito.splice(indice, 1 )
     console.log(carrito)
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
-        // actualizdo contenido del Modal 
     productosSeleccionados () 
 
 }
@@ -142,9 +134,8 @@ function eliminarPorducto (id) {
 function productosSeleccionados () {
     const contenedorCarrito = document.getElementById("carrito-contenedor")
     const contador = document.getElementById("contadorCarrito")
+    const precioTotal = document.getElementById("precioTotal")
    
-    
-    // vaciar el carrito 
     contenedorCarrito.innerHTML=""
 
     carrito.forEach((product) => {
@@ -157,6 +148,8 @@ function productosSeleccionados () {
     })
 
     contador.innerText = carrito.length
+
+    precioTotal.innerText =  carrito.reduce ((acc, el) => acc += el.precio, 0 )
     
 }
 

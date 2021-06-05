@@ -219,4 +219,55 @@
 
 }
 
+.oferta {
+  background-color: white;
+  padding: 10px;	
+  margin: 10px;	
+  height: 60px;
+}
+
+footer {
+background-color: rgb(130, 156, 233);
+padding: 10px;	
+padding-top: 20px;
+height: 10vh;
+} 
+
+    .logo_1{
+    width: 5vh;
+    height: 5vh;
+    padding: 2px;
+    margin: 2px;
+    }
+
+      .logo_1:hover {
+      background: royalblue;
+      cursor: pointer;
+    }
+
+    #ver__titulo {
+      text-decoration-style: solid;
+      text-decoration-line: underline;
+      font-size: 1em;
+    }
+
+
+
+@media (max-width: 576px) {
+       #ver__titulo 
+           { font-size: 0.8em;
+             margin-right:20px; }
+ }
+
+@media (max-width: 576px) {
+       .logo_1
+           { width: 4vh;
+         height: 4vh; }
+ }	
+
+@media (max-width: 576px) {
+       footer
+           {padding-top: 10px;}
+ }	
+
 
