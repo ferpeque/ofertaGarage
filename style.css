@@ -221,19 +221,10 @@
 
 footer {
 background-color: rgb(130, 156, 233);
-};
 padding: 10px;	
 padding-top: 20px;
- height: 18vh;
+height: 10vh;
 } 
-
-    .titulo_encabezado {
-    color: #3d405b;
-    font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
-    font-size: 1em;
-    font-style: italic; 
-    }
 
     .logo_1{
     width: 5vh;
@@ -247,21 +238,11 @@ padding-top: 20px;
       cursor: pointer;
     }
 
-
-.datos {
-
-color: #3d405b;
-font-size: 0.75em;
-line-height: 1.5em;
-margin: 10px;
-}
-
-#ver__titulo {
-
-text-decoration-style: solid;
-text-decoration-line: underline;
-font-size: 1em;
-}
+    #ver__titulo {
+      text-decoration-style: solid;
+      text-decoration-line: underline;
+      font-size: 1em;
+    }
 
 
 

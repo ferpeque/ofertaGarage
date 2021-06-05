@@ -122,6 +122,56 @@ function agregarCarrito (id) {
      //console.log(carrito)   
 }
 
+/*
+	
+  
+*/
+/*
+const busqueda =  document.getElementById("buscador")
+    console.log(busqueda.value)
+*/
+/*
+const findOne = (nombre) => {
+
+        nombre = nombre.toLowerCase()
+    
+        const productoElegido = productos.find( el => el.nombre  == nombre ) 
+       
+    
+        if (!productoElegido ) {
+            throw new Error(`No existe ${nombre}`)
+        }
+    
+     
+    
+        return productoElegido
+    
+    }
+*/
+    const search = document.getElementById("boton-Busqueda")
+
+    search.addEventListener("click", ( event ) => {
+        event.preventDefault() 
+        console.log("click")
+        const busqueda = $('#buscador').val()
+        console.log(busqueda)
+       /* const resultado = */
+       const product = productos.filter( el => el.nombre == busqueda) 
+       mostrarProdcutos (product)
+       console.log(product)
+
+    })
+
+
+
+
+
+
+
+
+
+
+
 function eliminarPorducto (id) {
     const productoEliminar = carrito.find (el =>el.id==id)
 
@@ -142,6 +192,7 @@ function eliminarPorducto (id) {
 function productosSeleccionados () {
     const contenedorCarrito = document.getElementById("carrito-contenedor")
     const contador = document.getElementById("contadorCarrito")
+    const precioTotal = document.getElementById("precioTotal")
    
     
     // vaciar el carrito 
@@ -157,6 +208,8 @@ function productosSeleccionados () {
     })
 
     contador.innerText = carrito.length
+
+    precioTotal.innerText =  carrito.reduce ((acc, el) => acc += el.precio, 0 )
     
 }
 
