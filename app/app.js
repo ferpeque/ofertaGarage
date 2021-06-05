@@ -11,9 +11,10 @@ fetch('app/productos.json')
         })
 
 function mostrarProdcutos (array) { 
-
+    // forEach recorre todo el Array
 array.forEach(product => {
 
+    //Creo tarjeta producto.
 let div = document.createElement("div")
     div.classList.add("card")
 
@@ -91,53 +92,25 @@ function agregarCarrito (id) {
     
     const productoElegido = productos.find( el => el.id == id) 
 
+
+
      if (productoElegido) {
         carrito.push(productoElegido)
      }
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
      productosSeleccionados ()
- 
+
+     //console.log(carrito)   
 }
 
-<<<<<<< HEAD
 const search = document.getElementById("boton-Busqueda")
-=======
-/*
-	
-  
-*/
-/*
-const busqueda =  document.getElementById("buscador")
-    console.log(busqueda.value)
-*/
-/*
-const findOne = (nombre) => {
-
-        nombre = nombre.toLowerCase()
-    
-        const productoElegido = productos.find( el => el.nombre  == nombre ) 
-       
-    
-        if (!productoElegido ) {
-            throw new Error(`No existe ${nombre}`)
-        }
-    
-     
-    
-        return productoElegido
-    
-    }
-*/
-    const search = document.getElementById("boton-Busqueda")
->>>>>>> f68e906476453ad2abf71028ed92a50792fe85b9
 
     search.addEventListener("click", ( event ) => {
         event.preventDefault() 
         console.log("click")
         const busqueda = $('#buscador').val()
         console.log(busqueda)
-<<<<<<< HEAD
         const product = productos.filter( el => el.nombre == busqueda) 
             if (!product ) {
                 throw new Error(`No existe ${nombre}`)
@@ -145,37 +118,23 @@ const findOne = (nombre) => {
        mostrarProdcutos (product)
        console.log(product)
        
-=======
-       /* const resultado = */
-       const product = productos.filter( el => el.nombre == busqueda) 
-       mostrarProdcutos (product)
-       console.log(product)
->>>>>>> f68e906476453ad2abf71028ed92a50792fe85b9
 
     })
 
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-
-
->>>>>>> f68e906476453ad2abf71028ed92a50792fe85b9
 function eliminarPorducto (id) {
     const productoEliminar = carrito.find (el =>el.id==id)
+
+        // me devuelve el indicte (posicion) del producto en el ArrayCarrito (modal)
     const indice = carrito.indexOf(productoEliminar)
         
+        // metodo splice elimina un producto
     carrito.splice(indice, 1 )
     console.log(carrito)
 
     localStorage.setItem('carrito', JSON.stringify(carrito))
 
+        // actualizdo contenido del Modal 
     productosSeleccionados () 
 
 }
